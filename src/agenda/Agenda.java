@@ -40,8 +40,20 @@ public class Agenda {
 		}
 	}
 	
-	public Contato remover(Contato contato){
-		return null;
+	public void removerPosicao(int posicao){
+		
+	}
+	public void removerFinal(){
+		
+	}
+	
+	public Contato removerInicio(Contato contato){
+		Pessoa pessoaPrimeiro = primeiro.getPessoa();
+		Contato retorno = new Contato();
+		contato.setPessoa(pessoaPrimeiro);
+		
+		primeiro = primeiro.getProximo();
+		return retorno;
 	}
 	
 	public void listar(){
