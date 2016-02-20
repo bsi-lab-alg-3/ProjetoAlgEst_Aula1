@@ -26,6 +26,15 @@ public class AgendaPrincipal {
 		System.out.println("-----LISTA 2-----");
 		agenda.listar();
 		
+		agenda.removerPosicao(4);
+		System.out.println("-----LISTA 3-----");
+		agenda.listar();
+		
+		agenda.removerFinal();
+		agenda.removerFinal();
+		System.out.println("-----LISTA 4-----");
+		agenda.listar();
+		
 		
 		Contato c = agenda.buscarPorTelefone("Telefone 4");
 		System.out.println("Achei " + c.getPessoa().getNome());

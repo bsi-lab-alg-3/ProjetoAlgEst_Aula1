@@ -34,6 +34,7 @@ public class Agenda {
 			if(posicao == posicaoAtual){
 				contato.setProximo(controle.getProximo());
 				controle.setProximo(contato);
+				break;
 			}
 			posicaoAtual++;
 			controle = controle.getProximo();
@@ -41,10 +42,29 @@ public class Agenda {
 	}
 	
 	public void removerPosicao(int posicao){
-		
+		Contato controle = primeiro;
+		Contato anterior = new Contato();
+		int posicaoAtual = 0;
+		while(controle!=null){
+			if(posicao == posicaoAtual){
+				anterior.setProximo(controle.getProximo());
+				break;
+			}
+			posicaoAtual++;
+			anterior = controle;
+			controle = controle.getProximo();
+		}
 	}
 	public void removerFinal(){
-		
+		Contato controle = primeiro;
+		Contato anterior = new Contato();
+		while(controle!=null){
+			if(controle.getProximo()!=null)
+				anterior = controle;
+			controle = controle.getProximo();
+		}
+		anterior.setProximo(null);
+		auxiliar = anterior;
 	}
 	
 	public Contato removerInicio(Contato contato){
